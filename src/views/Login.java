@@ -84,7 +84,11 @@ public class Login extends JFrame {
 		btnexit.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.exit(0);
+				int dialogoFinal = JOptionPane.showConfirmDialog(null, "¿Estás seguro que quieres salir?");
+				if(JOptionPane.OK_OPTION == dialogoFinal) {
+					JOptionPane.showMessageDialog(null, "OK, HASTA LUEGO.");
+					System.exit(0);
+				}
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -234,9 +238,11 @@ public class Login extends JFrame {
 		header.setLayout(null);
 	}
 	
+	
+	//Valida credenciales
 	private void Login() {
-		 String Usuario= "admin";
-	     String Contraseña="admin";
+		 String Usuario= "usuario";
+	     String Contraseña="password";
 
 	        String contrase=new String (txtContrasena.getPassword());
 
